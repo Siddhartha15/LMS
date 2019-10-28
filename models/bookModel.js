@@ -52,7 +52,7 @@ var issueBook = (book_id, customer_id, callback) => {
 };
 
 var unissueBook = (book_id, callback) => {
-    var sql = "UPDATE books SET user_id = '', date_issued = '' WHERE book_id = ?";
+    var sql = "UPDATE books SET user_id = '0', date_issued =NULL WHERE book_id = ?";
     db.executeQuery(sql, [book_id], function(result) {
         callback(result);
     });
